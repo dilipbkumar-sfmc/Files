@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Suma &amp; Dilip Kumar · Baby Shower · 18 October 2026</title>
+<meta name="description" content="Join Suma & Dilip Kumar as they bless their little one — 18 October 2026.">
+<meta name="theme-color" content="#F5AFC7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#8FCBE0;--blush:#F5AFC7;--mint:#BFE3D0;--gold:#F2C14E;--lilac:#CBB6E5;
+    --cream:#FFF8EF;--card:#FFFDF8;--ink:#4A3F45;--muted:#8E7E86;--night:#2B2430;
+    --line:#f0e2e8;
+    --script:'Caveat',cursive;--head:'Quicksand',sans-serif;--body:'Nunito',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:#241f2a;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:480px;margin:0 auto;background:var(--cream);position:relative;box-shadow:0 0 80px rgba(0,0,0,.5);overflow:hidden}
+  .eyebrow{font-family:var(--head);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:10.5px;color:#c98fa8}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  a{color:inherit}
+
+  #bubbles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:48}
+
+  .divider{display:flex;justify-content:center;padding:8px 0}
+  .divider svg{width:120px;height:auto;opacity:.95}
+
+  /* ===== GATE ===== */
+  .gate-stage{position:relative;width:100%;background:#2b2233;line-height:0;overflow:hidden}
+  .gate-stage>img{width:100%;height:auto;display:block;-webkit-user-drag:none;user-select:none}
+  .gate{position:absolute;inset:0;z-index:70;perspective:1500px}
+  .door{position:absolute;top:0;bottom:0;width:50.4%;overflow:hidden;
+    background:linear-gradient(135deg,#fde3ee 0%,#f5c8dc 38%,#e9a9c8 66%,#f7d3e4 100%);
+    transition:transform 1.25s cubic-bezier(.7,.02,.28,1),opacity .5s ease 1s;
+    backface-visibility:hidden;will-change:transform}
+  .door.l{left:0;transform-origin:left center;border-right:1px solid rgba(150,80,110,.35)}
+  .door.r{right:0;transform-origin:right center;border-left:1px solid rgba(150,80,110,.35)}
+  .door::before{content:"";position:absolute;inset:0;opacity:.4;
+    background-image:radial-gradient(circle,#fff 0 3px,transparent 3px);
+    background-size:30px 30px}
+  .door::after{content:"";position:absolute;inset:12px;border:1.5px solid rgba(255,255,255,.6);
+    border-radius:10px;box-shadow:inset 0 0 30px rgba(233,169,200,.4)}
+  .knob{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;z-index:2;transform:translateY(-50%);
+    background:radial-gradient(circle at 38% 32%,#fff,#F2C14E);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .door.l .knob{right:13px}.door.r .knob{left:13px}
+  .gate.open .door.l{transform:rotateY(-115deg);opacity:.15}
+  .gate.open .door.r{transform:rotateY(115deg);opacity:.15}
+
+  .bunting{position:absolute;top:0;left:0;right:0;z-index:72;line-height:0;
+    transition:transform 1s ease,opacity .8s ease;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+  .bunting svg{display:block;width:100%;height:auto}
+  .gate.open .bunting{transform:translateY(-46%);opacity:0}
+
+  .seal{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:74;
+    display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;background:none;border:none;
+    transition:opacity .45s ease,transform .55s ease}
+  .gate.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.45)}
+  .medallion{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;
+    background:radial-gradient(circle at 38% 30%,#fff,#F5AFC7 55%,#8FCBE0 100%);
+    border:3px solid #fff;box-shadow:0 10px 28px rgba(0,0,0,.35),inset 0 0 16px rgba(255,255,255,.6);
+    animation:sealpulse 2.4s ease-in-out infinite}
+  .medallion span{font-family:var(--script);font-weight:700;font-size:36px;color:#5c3a52;line-height:1}
+  .seal .lbl{font-family:var(--head);font-weight:600;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:#fff;text-shadow:0 1px 7px rgba(0,0,0,.35)}
+  .seal .lbl .tap{display:inline-block;animation:tapbob 1.6s ease-in-out infinite}
+  .seal:focus-visible .medallion{outline:3px solid #fff;outline-offset:3px}
+  @keyframes sealpulse{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 0 rgba(245,175,199,.55),inset 0 0 16px rgba(255,255,255,.6)}
+    50%{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 16px rgba(245,175,199,0),inset 0 0 16px rgba(255,255,255,.6)}}
+  @keyframes tapbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+  .scroll-cue{position:absolute;left:0;right:0;bottom:14px;z-index:60;text-align:center;color:#fff;
+    font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    text-shadow:0 1px 6px rgba(0,0,0,.5);opacity:0;transition:opacity .6s ease .4s;pointer-events:none}
+  .scroll-cue.show{opacity:.95;animation:bob 2s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ===== NAMES / INVITE ===== */
+  .invite{padding:38px 30px 26px;text-align:center;position:relative;z-index:1;
+    background:radial-gradient(120% 80% at 50% 0%, #fff 0%, var(--cream) 60%)}
+  .invite .pre{font-family:var(--head);font-weight:600;font-size:13px;letter-spacing:.05em;color:var(--muted);line-height:1.6}
+  .tagline{font-family:var(--script);font-weight:700;font-size:30px;color:#c98fa8;margin:8px 0 2px}
+  .names{margin:8px 0 6px}
+  .names .n{font-family:var(--script);font-weight:700;font-size:52px;line-height:1.05;color:#5c3a52}
+  .names .amp{font-family:var(--script);font-weight:600;font-size:30px;color:var(--sky);margin:0 6px}
+  .invite .ask{font-family:var(--body);font-size:14px;color:var(--muted);margin-top:14px;max-width:300px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .keyfacts{display:flex;justify-content:center;gap:0;margin-top:22px;flex-wrap:wrap}
+  .keyfacts .kf{padding:0 16px;border-right:1px solid var(--line)}
+  .keyfacts .kf:last-child{border-right:none}
+  .keyfacts .kf .t{font-family:var(--head);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#c98fa8}
+  .keyfacts .kf .v{font-family:var(--head);font-weight:600;font-size:17px;color:#4A3F45;margin-top:4px;line-height:1.25}
+  .tag{display:inline-block;margin-top:18px;font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:#5a9b8a;border:1px dashed #bfe3d0;border-radius:30px;padding:6px 14px}
+
+  /* ===== SCHEDULE ===== */
+  .sched{padding:32px 0 10px;position:relative;z-index:1;background:linear-gradient(180deg,var(--cream),#fdf1f6)}
+  .sec-head{text-align:center;margin:0 26px 8px}
+  .sec-head h2{font-family:var(--script);font-weight:700;font-size:34px;color:#5c3a52}
+  .timeline{position:relative;margin:18px 26px 6px;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:14px;width:2px;
+    background:linear-gradient(180deg,var(--blush),var(--sky))}
+  .ev{position:relative;margin-bottom:20px}
+  .ev::before{content:"";position:absolute;left:-30px;top:4px;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 50% 40%, #fff 0 2px, var(--gold) 3px 8px, #fff 8px 9px, var(--blush) 9px);
+    box-shadow:0 0 0 3px var(--cream)}
+  .ev .when{font-family:var(--head);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#c98fa8}
+  .ev h3{font-family:var(--script);font-weight:700;font-size:27px;color:#5c3a52;line-height:1.05;margin-top:1px}
+  .ev .sub{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.03em;color:#5a9b8a;margin-top:1px}
+  .ev .meta{font-size:13.5px;color:var(--ink);margin-top:8px;line-height:1.6}
+  .ev .meta b{color:#c9679a;font-weight:700}
+  .ev .note{font-family:var(--script);font-weight:600;font-size:16px;color:var(--muted);margin-top:6px;line-height:1.4}
+
+  /* ===== COUNTDOWN ===== */
+  .count{position:relative;z-index:1;background:linear-gradient(180deg,#5c3a52,#402a3a);color:#fbeef4;padding:30px 20px;text-align:center}
+  .count .eyebrow{color:var(--gold);margin-bottom:14px}
+  .cd{display:flex;justify-content:center;gap:10px}
+  .cd .u{flex:1;max-width:78px;background:rgba(255,255,255,.08);border:1px solid rgba(242,193,78,.4);border-radius:12px;padding:12px 4px}
+  .cd .num{font-family:var(--head);font-weight:700;font-size:28px;line-height:1;color:#fff}
+  .cd .lab{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#e0bcd0;margin-top:6px}
+
+  /* ===== FUN: TEAM PICKER ===== */
+  .teams{padding:32px 26px 30px;position:relative;z-index:1;text-align:center;
+    background:linear-gradient(180deg,#fdf1f6,#f2f9f6)}
+  .teams-lead{font-size:13.5px;color:var(--muted);line-height:1.6;max-width:330px;margin:6px auto 20px}
+  .teams-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+  .team{position:relative;border:1.5px solid var(--line);background:#fff;border-radius:18px;padding:18px 8px 16px;
+    cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;transition:.25s;overflow:hidden}
+  .team .team-ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center}
+  .team .team-ic svg{width:30px;height:30px}
+  .team-boy .team-ic{background:radial-gradient(circle at 38% 32%,#bfe0f2,#8FCBE0)}
+  .team-girl .team-ic{background:radial-gradient(circle at 38% 32%,#fbd6e6,#F5AFC7)}
+  .team .team-t{font-family:var(--head);font-weight:700;font-size:12.5px;letter-spacing:.05em;color:var(--ink)}
+  .team .team-n{font-family:var(--script);font-weight:700;font-size:22px;line-height:1}
+  .team-boy .team-n{color:#3f8fb3}.team-girl .team-n{color:#c9679a}
+  .team[aria-pressed="true"]{transform:translateY(-2px)}
+  .team-boy[aria-pressed="true"]{border-color:#3f8fb3;box-shadow:0 10px 24px rgba(63,143,179,.24)}
+  .team-girl[aria-pressed="true"]{border-color:#c9679a;box-shadow:0 10px 24px rgba(201,103,154,.24)}
+  .team[aria-pressed="true"]::after{content:"✓ You're in";position:absolute;top:8px;right:8px;
+    font-family:var(--head);font-weight:700;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#fff;
+    padding:3px 7px;border-radius:20px}
+  .team-boy[aria-pressed="true"]::after{background:#3f8fb3}
+  .team-girl[aria-pressed="true"]::after{background:#c9679a}
+  .team:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .tug{position:relative;width:52px;height:64px;display:flex;align-items:center;justify-content:center}
+  .tug-rope{position:absolute;left:-6px;right:-6px;top:50%;height:3px;transform:translateY(-50%);
+    background:repeating-linear-gradient(90deg,#e6c98a 0 6px,#d1ab5c 6px 10px);border-radius:3px}
+  .tug-knot{position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;
+    background:radial-gradient(circle at 38% 32%,#fff,#F2C14E 70%,#c9982c);
+    box-shadow:0 2px 6px rgba(0,0,0,.25);transform:translate(-50%,-50%);transition:left .55s cubic-bezier(.6,.02,.3,1)}
+  .tug-vs{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-family:var(--head);font-weight:700;
+    font-size:11px;letter-spacing:.08em;color:#c98fa8}
+  .team-result{min-height:20px;margin-top:18px;font-family:var(--script);font-weight:700;font-size:20px;
+    opacity:0;transition:opacity .4s ease}
+  .team-result.show{opacity:1}
+
+  .foot{position:relative;z-index:1;background:var(--night);color:#e2c6d6;text-align:center;padding:34px 30px 46px}
+  .foot .heart{color:var(--blush);font-size:24px;margin-bottom:10px}
+  .foot .bless{font-family:var(--script);font-weight:600;font-size:20px;color:#f3dce9;line-height:1.5}
+  .foot .sig{font-family:var(--script);font-weight:700;font-size:26px;color:var(--gold);margin-top:12px}
+  .foot .made{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a7383;margin-top:18px}
+
+  @media(max-width:360px){.names .n{font-size:42px}.tagline{font-size:26px}.keyfacts .kf{padding:0 11px}.medallion{width:90px;height:90px}
+    .team .team-n{font-size:19px}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .reveal{opacity:1;transform:none}
+    .door{transition:opacity .6s ease!important;transform:none!important}
+    .gate.open .door{opacity:0!important;transform:none!important}
+    .bunting{transition:opacity .6s ease!important}
+  }
+</style>
+</head>
+<body>
+<canvas id="bubbles" aria-hidden="true"></canvas>
+<div class="wrap">
+
+  <!-- ===== GATE ===== -->
+  <div class="gate-stage" id="stage">
+    <img id="baseImg" alt="Illustrated baby shower invitation background for Suma and Dilip Kumar">
+    <div class="gate" id="gate">
+      <div class="door l"><span class="knob"></span></div>
+      <div class="door r"><span class="knob"></span></div>
+      <div class="bunting" aria-hidden="true"><svg id="buntingSvg" viewBox="0 0 480 70" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg"></svg></div>
+      <button class="seal" id="seal" type="button" aria-label="Open the invitation">
+        <span class="medallion"><span id="monogram">S &amp; D</span></span>
+        <span class="lbl"><span class="tap">✦</span> Tap to open</span>
+      </button>
+    </div>
+    <div class="scroll-cue" id="cue">see the details ↓</div>
+  </div>
+
+  <!-- ===== NAMES / INVITE ===== -->
+  <section class="invite">
+    <p class="pre reveal eyebrow">You are lovingly invited</p>
+    <p class="tagline reveal" id="tagline">Bless our little one</p>
+    <div class="names reveal">
+      <span class="n" id="nameA">Suma</span>
+      <span class="amp">&amp;</span>
+      <span class="n" id="nameB">Dilip Kumar</span>
+    </div>
+    <p class="ask reveal">as we celebrate the joy of new beginnings and welcome our baby with your blessings.</p>
+    <div class="keyfacts reveal">
+      <div class="kf"><div class="t">When</div><div class="v" id="kfWhen">18 October<br>2026</div></div>
+      <div class="kf"><div class="t">Starts</div><div class="v" id="kfStart">10:30 AM</div></div>
+    </div>
+    <div class="reveal"><span class="tag" id="venueTag">📍 Venue details coming soon</span></div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M10 20 H90" stroke="#F5AFC7" stroke-width="1.5"/>
+      <path d="M130 20 H210" stroke="#8FCBE0" stroke-width="1.5"/>
+      <circle cx="110" cy="20" r="7" fill="#F2C14E"/>
+      <circle cx="96" cy="20" r="2.4" fill="#F5AFC7"/><circle cx="124" cy="20" r="2.4" fill="#8FCBE0"/>
+    </svg>
+  </div>
+
+  <!-- ===== SCHEDULE ===== -->
+  <section class="sched">
+    <div class="sec-head reveal"><p class="eyebrow">A morning to remember</p><h2>The Celebration</h2></div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ===== COUNTDOWN ===== -->
+  <section class="count">
+    <p class="eyebrow">Counting down to the big day</p>
+    <div class="cd" id="cd">
+      <div class="u"><div class="num" id="d">--</div><div class="lab">Days</div></div>
+      <div class="u"><div class="num" id="h">--</div><div class="lab">Hours</div></div>
+      <div class="u"><div class="num" id="m">--</div><div class="lab">Mins</div></div>
+      <div class="u"><div class="num" id="s">--</div><div class="lab">Secs</div></div>
+    </div>
+  </section>
+
+  <!-- ===== FUN: TEAM BOY / TEAM GIRL ===== -->
+  <section class="teams">
+    <div class="sec-head reveal"><p class="eyebrow">A little fun before we celebrate</p><h2>Pick a side!</h2></div>
+    <p class="teams-lead reveal">Baby Boy or Baby Girl — tap to cast your guess and join the fun.</p>
+    <div class="teams-grid reveal">
+      <button class="team team-boy" id="teamBoy" type="button" aria-pressed="false">
+        <span class="team-ic" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="#3f8fb3">
+            <path d="M24 8c-7 0-12 5-12 12v6c0 7 5 13 12 13s12-6 12-13v-6c0-7-5-12-12-12Z" opacity=".18"/>
+            <path d="M24 12c-5.5 0-9.5 4-9.5 9.5V27c0 5.5 4 10.5 9.5 10.5S33.5 32.5 33.5 27v-5.5C33.5 16 29.5 12 24 12Z"/>
+            <path d="M17 21h14v2H17z" fill="#fff"/>
+            <circle cx="24" cy="10" r="3" fill="#3f8fb3"/>
+          </g></svg>
+        </span>
+        <span class="team-t">Baby Boy</span>
+        <span class="team-n">Blue</span>
+      </button>
+
+      <div class="tug" aria-hidden="true">
+        <span class="tug-rope"></span>
+        <span class="tug-knot" id="knot"></span>
+        <span class="tug-vs">vs</span>
+      </div>
+
+      <button class="team team-girl" id="teamGirl" type="button" aria-pressed="false">
+        <span class="team-ic" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="#c9679a">
+            <path d="M24 8c-7 0-12 5-12 12v6c0 7 5 13 12 13s12-6 12-13v-6c0-7-5-12-12-12Z" opacity=".18"/>
+            <path d="M24 12c-5.5 0-9.5 4-9.5 9.5V27c0 5.5 4 10.5 9.5 10.5S33.5 32.5 33.5 27v-5.5C33.5 16 29.5 12 24 12Z"/>
+            <path d="M17 21h14v2H17z" fill="#fff"/>
+            <path d="M24 5 L27 10 L24 9 L21 10Z" fill="#c9679a"/>
+          </g></svg>
+        </span>
+        <span class="team-t">Baby Girl</span>
+        <span class="team-n">Pink</span>
+      </button>
+    </div>
+    <p class="team-result" id="teamResult" role="status"></p>
+  </section>
+
+  <footer class="foot">
+    <div class="heart">💛</div>
+    <p class="bless">With the blessings of our elders<br>and the warmth of your presence.</p>
+    <div class="sig" id="sig">Suma &amp; Dilip Kumar</div>
+    <p class="made">Made with love</p>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   EDIT EVERYTHING HERE
+   ============================================================ */
+var CONFIG = {
+  coupleA: { name:"Suma", initial:"S" },
+  coupleB: { name:"Dilip Kumar", initial:"D" },
+  tagline: "Bless our little one",
+
+  eventDate: "2026-10-18",     /* assumed year 2026 — update if different */
+  eventStart:"10:30",
+  lunchStart:"12:30",
+  venueName:"Sri Krishna Aramane Veg Restaurant & Party Hall, Bengaluru",
+  mapUrl:"https://maps.app.goo.gl/gGCt7r293wxLrPgX7"
+};
+
+var SCHEDULE = [
+  { key:'ceremony', name:'Baby Shower', sub:'Blessings begin', start:'10:30', note:'Join us as we shower blessings on our little one.' },
+  { key:'lunch',     name:'Lunch',      sub:'Feast & fellowship', start:'12:30', note:'Stay on and share a meal with us.' }
+];
+/* ============================================================ */
+
+/* placeholder hero image so the file works standalone until a photo/venue is set */
+var HERO_IMG = "https://media.craftyartapp.com/uploadedFiles/thumb_file/aa6845071007659fbcf711ff08bcb491c351a10e1749123647.jpg";
+
+var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+function to12(t){var x=t.split(':'),h=+x[0],m=x[1],ap=h>=12?'PM':'AM';h=h%12||12;return h+(m==='00'?'':':'+m)+' '+ap;}
+function parseLocal(d,t){var p=d.split('-'),x=(t||'11:30').split(':');return new Date(+p[0],+p[1]-1,+p[2],+x[0],+x[1],0);}
+
+/* fill text from CONFIG */
+document.title=CONFIG.coupleA.name+' & '+CONFIG.coupleB.name+' · Baby Shower';
+document.getElementById('nameA').textContent=CONFIG.coupleA.name;
+document.getElementById('nameB').textContent=CONFIG.coupleB.name;
+document.getElementById('tagline').textContent=CONFIG.tagline;
+document.getElementById('sig').innerHTML=CONFIG.coupleA.name+' &amp; '+CONFIG.coupleB.name;
+document.getElementById('monogram').textContent=CONFIG.coupleA.initial+' & '+CONFIG.coupleB.initial;
+(function(){
+  var wd=parseLocal(CONFIG.eventDate);
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('kfWhen').innerHTML=wd.getDate()+' '+MONTHS[wd.getMonth()]+'<br>'+wd.getFullYear();
+  document.getElementById('kfStart').textContent=to12(CONFIG.eventStart);
+  var tag=document.getElementById('venueTag');
+  if(CONFIG.mapUrl){
+    var a=document.createElement('a'); a.href=CONFIG.mapUrl; a.target='_blank'; a.rel='noopener';
+    a.textContent='📍 '+CONFIG.venueName; a.style.textDecoration='none'; a.style.color='inherit';
+    tag.replaceWith(a); a.id='venueTag'; a.className='tag';
+  } else {
+    tag.textContent='📍 '+CONFIG.venueName;
+  }
+})();
+document.getElementById('baseImg').src=HERO_IMG;
+
+/* ===== bunting flags ===== */
+(function(){
+  var svg=document.getElementById('buntingSvg'); if(!svg)return;
+  var W=480,N=13,dip=12,COLORS=['#F5AFC7','#8FCBE0','#F2C14E','#BFE3D0','#CBB6E5'],p=[];
+  function ay(x){return 10+dip*Math.sin(Math.PI*x/W);}
+  p.push('<path d="M0 10 Q240 '+(10+dip*1.2).toFixed(1)+' 480 10" stroke="#e6cfe0" stroke-width="2" fill="none"/>');
+  for(var i=0;i<N;i++){
+    var x=(i/(N-1))*W,y=ay(x),c=COLORS[i%COLORS.length];
+    p.push('<path d="M'+(x-9)+' '+y.toFixed(1)+' L'+(x+9)+' '+y.toFixed(1)+' L'+x+' '+(y+22).toFixed(1)+' Z" fill="'+c+'" opacity="0.92"/>');
+    p.push('<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2.4" fill="#fff"/>');
+  }
+  svg.insertAdjacentHTML('beforeend',p.join(''));
+})();
+
+/* ===== ambient bubbles (canvas) ===== */
+var burst=function(){};
+(function(){
+  if(REDUCED) return;
+  var c=document.getElementById('bubbles'),x=c.getContext('2d');
+  var W,H,DPR=Math.min(window.devicePixelRatio||1,2);
+  function resize(){W=c.width=Math.floor(innerWidth*DPR);H=c.height=Math.floor(innerHeight*DPR);
+    c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';}
+  resize(); addEventListener('resize',resize);
+  var COLORS=['#F5AFC7','#8FCBE0','#F2C14E','#BFE3D0','#CBB6E5'];
+  function mk(fromBottom,fc){
+    var col=fc||COLORS[(Math.random()*COLORS.length)|0];
+    return {x:fromBottom?W*(0.25+Math.random()*0.5):Math.random()*W,
+      y:fromBottom?H+20*DPR:Math.random()*H, r:(4+Math.random()*7)*DPR,
+      vy:-(0.25+Math.random()*0.5)*DPR*(fromBottom?2.2:1),
+      sway:(14+Math.random()*30)*DPR, ph:Math.random()*6.28, vph:0.01+Math.random()*0.015,
+      col:col, op:0.35+Math.random()*0.35, burst:!!fromBottom};
+  }
+  function draw(p){
+    x.save(); x.globalAlpha=p.op;
+    var g=x.createRadialGradient(p.x+Math.sin(p.ph)*p.sway,p.y,0,p.x+Math.sin(p.ph)*p.sway,p.y,p.r);
+    g.addColorStop(0,'#fff'); g.addColorStop(0.35,p.col); g.addColorStop(1,'transparent');
+    x.fillStyle=g; x.beginPath(); x.arc(p.x+Math.sin(p.ph)*p.sway,p.y,p.r,0,7); x.fill(); x.restore();
+  }
+  var arr=[],BASE=innerWidth<520?10:16,raf;
+  for(var i=0;i<BASE;i++) arr.push(mk(false));
+  function frame(){
+    x.clearRect(0,0,W,H);
+    for(var i=arr.length-1;i>=0;i--){var p=arr[i];
+      p.y+=p.vy; p.ph+=p.vph; draw(p);
+      if(p.y<-30*DPR){ if(p.burst){arr.splice(i,1);} else {p.y=H+p.r*2;p.x=Math.random()*W;p.ph=Math.random()*6.28;} }
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  raf=requestAnimationFrame(frame);
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){cancelAnimationFrame(raf);} else {raf=requestAnimationFrame(frame);}
+  });
+  burst=function(n,fc){n=n||40; for(var k=0;k<n;k++) arr.push(mk(true,fc));};
+})();
+
+/* ===== open the doors ===== */
+var gate=document.getElementById('gate'),cue=document.getElementById('cue'),opened=false;
+function openGate(){
+  if(opened)return; opened=true;
+  gate.classList.add('open');
+  burst(46);
+  cue.classList.add('show');
+  setTimeout(function(){gate.style.display='none';},1500);
+}
+document.getElementById('seal').addEventListener('click',function(e){e.stopPropagation();openGate();});
+gate.addEventListener('click',openGate);
+
+/* ===== timeline ===== */
+(function(){
+  var tl=document.getElementById('timeline');
+  SCHEDULE.forEach(function(ev){
+    var div=document.createElement('div');div.className='ev reveal';
+    div.innerHTML='<div class="body"><div class="when">'+to12(ev.start)+'</div><h3>'+ev.name+'</h3>'+
+      '<div class="sub">'+ev.sub+'</div>'+
+      '<div class="meta"><b>'+to12(ev.start)+'</b> onwards · '+CONFIG.venueName+'</div>'+
+      (ev.note?'<div class="note">'+ev.note+'</div>':'')+'</div>';
+    tl.appendChild(div);
+  });
+})();
+
+/* ===== countdown ===== */
+var target=parseLocal(CONFIG.eventDate,CONFIG.eventStart).getTime();
+function tick(){
+  var t=target-Date.now();
+  if(t<0){document.getElementById('cd').innerHTML='<p style="font-family:var(--script);font-weight:700;font-size:22px;color:#fff">The day is here — celebrate with us!</p>';return;}
+  var d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4),s=Math.floor(t%6e4/1e3);
+  document.getElementById('d').textContent=d;
+  document.getElementById('h').textContent=('0'+h).slice(-2);
+  document.getElementById('m').textContent=('0'+m).slice(-2);
+  document.getElementById('s').textContent=('0'+s).slice(-2);
+}
+tick();setInterval(tick,1000);
+
+/* ===== team boy / team girl ===== */
+(function(){
+  var bBtn=document.getElementById('teamBoy'),gBtn=document.getElementById('teamGirl'),
+      knot=document.getElementById('knot'),res=document.getElementById('teamResult');
+  var BOY=['#bfe0f2','#3f8fb3'], GIRL=['#fbd6e6','#c9679a'];
+  function pick(side){
+    var boy=side==='boy';
+    bBtn.setAttribute('aria-pressed',boy);gBtn.setAttribute('aria-pressed',!boy);
+    knot.style.left=boy?'22%':'78%';
+    res.textContent=boy ? 'You’re guessing Baby Boy — go blue! 💙' : 'You’re guessing Baby Girl — go pink! 💗';
+    res.style.color=boy?'#3f8fb3':'#c9679a';
+    res.classList.add('show');
+    burst(30, boy?BOY:GIRL);
+  }
+  bBtn.addEventListener('click',function(){pick('boy');});
+  gBtn.addEventListener('click',function(){pick('girl');});
+})();
+
+/* ===== scroll reveals ===== */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.18});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
