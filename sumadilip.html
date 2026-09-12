@@ -134,7 +134,7 @@
   .team-boy .team-ic{background:radial-gradient(circle at 38% 32%,#bfe0f2,#8FCBE0)}
   .team-girl .team-ic{background:radial-gradient(circle at 38% 32%,#fbd6e6,#F5AFC7)}
   .team .team-t{font-family:var(--head);font-weight:700;font-size:12.5px;letter-spacing:.05em;color:var(--ink)}
-  .team .team-n{font-family:var(--script);font-weight:700;font-size:22px;line-height:1}
+  .team .team-n{font-family:Arial,sans-serif;font-weight:700;font-size:30px;line-height:1}
   .team-boy .team-n{color:#3f8fb3}.team-girl .team-n{color:#c9679a}
   .team[aria-pressed="true"]{transform:translateY(-2px)}
   .team-boy[aria-pressed="true"]{border-color:#3f8fb3;box-shadow:0 10px 24px rgba(63,143,179,.24)}
@@ -187,7 +187,7 @@
       <div class="bunting" aria-hidden="true"><svg id="buntingSvg" viewBox="0 0 480 70" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg"></svg></div>
       <button class="seal" id="seal" type="button" aria-label="Open the invitation">
         <span class="medallion"><span id="monogram">S &amp; D</span></span>
-        <span class="lbl"><span class="tap">✦</span> Tap to open</span>
+        <span class="lbl"><span class="tap">✦ Tap to open</span> </span>
       </button>
     </div>
     <div class="scroll-cue" id="cue">see the details ↓</div>
@@ -204,10 +204,10 @@
     </div>
     <p class="ask reveal">as we celebrate the joy of new beginnings and welcome our baby with your blessings.</p>
     <div class="keyfacts reveal">
-      <div class="kf"><div class="t">When</div><div class="v" id="kfWhen">18 October<br>2026</div></div>
-      <div class="kf"><div class="t">Starts</div><div class="v" id="kfStart">10:30 AM</div></div>
+      <div class="kf"><div class="t">When</div><div class="v" id="kfWhen">18 October 2026</div></div>
+      <div class="kf"><div class="t">Starts</div><div class="v" id="kfStart">8:00 AM</div></div>
     </div>
-    <div class="reveal"><span class="tag" id="venueTag">📍 Venue details coming soon</span></div>
+    <div class="reveal"><span class="tag" id="venueTag">📍 </span></div>
   </section>
 
   <div class="divider" aria-hidden="true">
@@ -251,7 +251,7 @@
           </g></svg>
         </span>
         <span class="team-t">Baby Boy</span>
-        <span class="team-n">Blue</span>
+        <span class="team-n">♂</span>
       </button>
 
       <div class="tug" aria-hidden="true">
@@ -270,7 +270,7 @@
           </g></svg>
         </span>
         <span class="team-t">Baby Girl</span>
-        <span class="team-n">Pink</span>
+        <span class="team-n">♀</span>
       </button>
     </div>
     <p class="team-result" id="teamResult" role="status"></p>
@@ -294,15 +294,16 @@ var CONFIG = {
   tagline: "Bless our little one",
 
   eventDate: "2026-10-18",     /* assumed year 2026 — update if different */
-  eventStart:"10:30",
+  eventStart:"08:00",
   lunchStart:"12:30",
-  venueName:"Sri Krishna Aramane Veg Restaurant & Party Hall, Bengaluru",
+  venueName:"Sri Krishna Aramane, Ullal Main Road, Near Amma Ashrama Circle, Bengaluru - 56",
   mapUrl:"https://maps.app.goo.gl/gGCt7r293wxLrPgX7"
 };
 
 var SCHEDULE = [
-  { key:'ceremony', name:'Baby Shower', sub:'Blessings begin', start:'10:30', note:'Join us as we shower blessings on our little one.' },
-  { key:'lunch',     name:'Lunch',      sub:'Feast & fellowship', start:'12:30', note:'Stay on and share a meal with us.' }
+  { key:'sendoff',   name:'Sendoff',    sub:'From family, with love', start:'08:30', venue:'At home, from the family', note:'A small tradition to send our little one off with blessings.' },
+  { key:'ceremony',  name:'Baby Shower',sub:'Blessings begin',        start:'10:30', note:'Join us as we shower blessings on our little one.' },
+  { key:'lunch',     name:'Lunch',      sub:'Feast & fellowship',     start:'12:30', note:'Stay on and share a meal with us.' }
 ];
 /* ============================================================ */
 
@@ -323,7 +324,7 @@ document.getElementById('monogram').textContent=CONFIG.coupleA.initial+' & '+CON
 (function(){
   var wd=parseLocal(CONFIG.eventDate);
   var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('kfWhen').innerHTML=wd.getDate()+' '+MONTHS[wd.getMonth()]+'<br>'+wd.getFullYear();
+  document.getElementById('kfWhen').innerHTML=wd.getDate()+' '+MONTHS[wd.getMonth()]+' '+wd.getFullYear();
   document.getElementById('kfStart').textContent=to12(CONFIG.eventStart);
   var tag=document.getElementById('venueTag');
   if(CONFIG.mapUrl){
@@ -374,13 +375,13 @@ var burst=function(){};
     g.addColorStop(0,'#fff'); g.addColorStop(0.35,p.col); g.addColorStop(1,'transparent');
     x.fillStyle=g; x.beginPath(); x.arc(p.x+Math.sin(p.ph)*p.sway,p.y,p.r,0,7); x.fill(); x.restore();
   }
-  var arr=[],BASE=innerWidth<520?10:16,raf;
+  var arr=[],BASE=innerWidth<520?10:16,MAX=BASE+70,raf;
   for(var i=0;i<BASE;i++) arr.push(mk(false));
   function frame(){
     x.clearRect(0,0,W,H);
     for(var i=arr.length-1;i>=0;i--){var p=arr[i];
       p.y+=p.vy; p.ph+=p.vph; draw(p);
-      if(p.y<-30*DPR){ if(p.burst){arr.splice(i,1);} else {p.y=H+p.r*2;p.x=Math.random()*W;p.ph=Math.random()*6.28;} }
+      if(p.y<-30*DPR){ p.y=H+p.r*2;p.x=Math.random()*W;p.ph=Math.random()*6.28; }
     }
     raf=requestAnimationFrame(frame);
   }
@@ -388,7 +389,7 @@ var burst=function(){};
   document.addEventListener('visibilitychange',function(){
     if(document.hidden){cancelAnimationFrame(raf);} else {raf=requestAnimationFrame(frame);}
   });
-  burst=function(n,fc){n=n||40; for(var k=0;k<n;k++) arr.push(mk(true,fc));};
+  burst=function(n,fc){n=n||40; for(var k=0;k<n&&arr.length<MAX;k++) arr.push(mk(true,fc));};
 })();
 
 /* ===== open the doors ===== */
@@ -403,6 +404,9 @@ function openGate(){
 document.getElementById('seal').addEventListener('click',function(e){e.stopPropagation();openGate();});
 gate.addEventListener('click',openGate);
 
+/* auto-open the gate after 5 seconds, even if no one taps */
+setTimeout(openGate, 5000);
+
 /* ===== timeline ===== */
 (function(){
   var tl=document.getElementById('timeline');
@@ -410,7 +414,7 @@ gate.addEventListener('click',openGate);
     var div=document.createElement('div');div.className='ev reveal';
     div.innerHTML='<div class="body"><div class="when">'+to12(ev.start)+'</div><h3>'+ev.name+'</h3>'+
       '<div class="sub">'+ev.sub+'</div>'+
-      '<div class="meta"><b>'+to12(ev.start)+'</b> onwards · '+CONFIG.venueName+'</div>'+
+      '<div class="meta"><b>'+to12(ev.start)+'</b> onwards · '+(ev.venue||CONFIG.venueName)+'</div>'+
       (ev.note?'<div class="note">'+ev.note+'</div>':'')+'</div>';
     tl.appendChild(div);
   });
@@ -438,7 +442,7 @@ tick();setInterval(tick,1000);
     var boy=side==='boy';
     bBtn.setAttribute('aria-pressed',boy);gBtn.setAttribute('aria-pressed',!boy);
     knot.style.left=boy?'22%':'78%';
-    res.textContent=boy ? 'You’re guessing Baby Boy — go blue! 💙' : 'You’re guessing Baby Girl — go pink! 💗';
+    res.textContent=boy ? 'You’re guessing Baby Boy! 💙' : 'You’re guessing Baby Girl! 💗';
     res.style.color=boy?'#3f8fb3':'#c9679a';
     res.classList.add('show');
     burst(30, boy?BOY:GIRL);
