@@ -234,7 +234,7 @@
     <p class="lineage reveal"><span id="lineA"></span> &nbsp;·&nbsp; <span id="lineB"></span></p>
     <div class="keyfacts reveal">
       <div class="kf"><div class="t">When</div><div class="v" id="kfWhen">30 November<br>2026</div></div>
-      <div class="kf"><div class="t">Where</div><div class="v" id="kfWhere">Sri Anjanadri Convention Hall<br>Bangalore</div></div>
+      <div class="kf"><div class="t">Where</div><div class="v" id="kfWhere">Sri Anjanadri (MVM) Convention Hall<br>Bangalore</div></div>
     </div>
     <div class="reveal"><span class="tag" id="hashtag">#HarshithaWedsPramodh</span></div>
   </section>
@@ -339,19 +339,17 @@ var CONFIG = {
 
   weddingDate: "2026-11-30",
   weddingStart:"09:00",
-  weddingVenue:"Sri Anjanadri Convention Hall, Bangalore - Nelamangala Expressway",
-  weddingMapQuery:"Sri Anjanadri Convention Hall Bangalore Nelamangala Expressway",
+  weddingVenue:"Sri Anjanadri (MVM) Convention Hall, Bangalore - Nelamangala Expressway",
+  weddingMapQuery:"Sri Anjanadri MVM Convention Hall Bangalore Nelamangala Expressway",
 
   familyPhone:"+919108482303"
 };
 
 var SCHEDULE = [
-  { key:'reception', name:'Reception', sub:'An evening to celebrate',    date:'2026-11-29', start:'18:00', dur:4,
-    venue:'Sri Anjanadri Convention Hall, Bangalore - Nelamangala Expressway', dress:'', note:'An evening of joy, food and family.' },
-  { key:'haldi',     name:'Haldi',     sub:'Arishina Shastra',      date:'2026-11-29', start:'23:00', dur:4,
-    venue:'Sri Anjanadri Convention Hall, Bangalore - Nelamangala Expressway', dress:'', note:'Turmeric, laughter and the very first blessings.' },
-  { key:'wedding',   name:'The Wedding',sub:'The Muhurtham',             date:'2026-11-30', start:'09:00', dur:5,
-    venue:'Sri Anjanadri Convention Hall, Bangalore - Nelamangala Expressway', dress:'Traditional', note:'The sacred vows — with your blessings.',
+  { key:'reception', name:'Reception', sub:'An evening to celebrate',    date:'2026-11-29', start:'18:30', dur:4,
+    venue:'Sri Anjanadri (MVM) Convention Hall, Bangalore - Nelamangala Expressway', dress:'', note:'An evening of joy, food and family.' },
+  { key:'wedding', name:'The Wedding',sub:'The Muhurtham',             date:'2026-11-30', start:'09:10', end:'10:25', dur:5,
+    venue:'Sri Anjanadri (MVM) Convention Hall, Bangalore - Nelamangala Expressway', dress:'Traditional', note:'The sacred vows — with your blessings.',
     img:'images/wedding.jpg' }
 ];
 /* ============================================================ */
@@ -473,7 +471,7 @@ gate.addEventListener('click',openGate);
     var div=document.createElement('div');div.className='ev reveal';
     div.innerHTML='<div class="body"><div class="when">'+pretty(ev.date)+'</div><h3>'+ev.name+'</h3>'+
       '<div class="sub">'+ev.sub+'</div>'+
-      '<div class="meta"><b>'+to12(ev.start)+'</b> onwards · '+ ev.venue.replace(', Bangalore - Nelamangala Expressway', ',<br>Bangalore - Nelamangala Expressway')+ (ev.dress?'<br>Dress code: '+ev.dress:'')+ '</div>'+
+      '<div class="meta"><b>'+(ev.end?to12(ev.start)+' to '+to12(ev.end):to12(ev.start))+'</b>'+(ev.end?'':' onwards')+' · '+ ev.venue.replace(', Bangalore - Nelamangala Expressway', ',<br>Bangalore - Nelamangala Expressway')+ (ev.dress?'<br>Dress code: '+ev.dress:'')+ '</div>'+
       (ev.note?'<div class="note">“'+ev.note+'”</div>':'')+'</div>';
     tl.appendChild(div);
   });
